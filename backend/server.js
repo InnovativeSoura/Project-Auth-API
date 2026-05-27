@@ -15,7 +15,9 @@ const authRoutes = require("./routes/authRoutes");
 const app = express();
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({
+   origin: "*"
+}));
 
 app.get("/", (req, res) => {
   res.send("Auth API Running 🚀");
